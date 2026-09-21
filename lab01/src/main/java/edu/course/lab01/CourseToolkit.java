@@ -23,7 +23,7 @@ public final class CourseToolkit {
             return true;
         }
         if (number > 2) {
-            for (int i = 2; i * i <=number; i++){
+            for (int i = 2; i * i <=number; i++) {
                 if (number%i==0) {
                     return false; 
                 }
@@ -48,4 +48,17 @@ public final class CourseToolkit {
         }
     
     }
+    public static double Average(int[] values) {
+        if (values==null || values.length==0) {
+            throw new IllegalArgumentException("Array must be not null or have more than 0 digits");
+        }
+        int sum = 0;
+        int count = 0;
+        for(int i = 0; i<values.length; i++) {
+            sum+=values[i];
+            count++;
+        }
+        return (sum/count);
+        }
+    
 }

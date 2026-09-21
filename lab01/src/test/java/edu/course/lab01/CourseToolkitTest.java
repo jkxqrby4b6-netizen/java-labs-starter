@@ -20,4 +20,34 @@ class CourseToolkitTest {
 
         assertFalse(result);
     }
+    @Test 
+    void returnsTrueForNegativeEvenNumber() {
+        boolean result = CourseToolkit.isEven(-8);
+
+        assertTrue(result);
+    }
+    @Test 
+    void returnsFalseNumbersLessThanTwo() {
+        boolean result = CourseToolkit.isPrime(1);
+
+        assertFalse(result);
+    }
+    @Test 
+    void returnsTrueForTwo() {
+        boolean result = CourseToolkit.isPrime(2);
+
+        assertTrue(result);
+    }
+    @Test 
+    void returnsFalseForEvenNumber() {
+        boolean result = CourseToolkit.isPrime(44);
+
+        assertFalse(result);
+    }
+    @Test 
+    void returnsTrueForPrimeNumbers() {
+        boolean result = CourseToolkit.isPrime(11);
+
+        assertTrue(result);
+    }
 }

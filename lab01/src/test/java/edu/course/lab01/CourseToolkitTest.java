@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.Disabled;
+
 class CourseToolkitTest {
 
     @Test
@@ -49,5 +51,29 @@ class CourseToolkitTest {
         boolean result = CourseToolkit.isPrime(11);
 
         assertTrue(result);
+    }
+    @Test 
+    void returnsTrueForLengthOne() {
+        boolean result = CourseToolkit.isPalindrome("a");
+
+        assertTrue(result);
+    }
+    @Test 
+    void returnsTrueForPalindrome() {
+        boolean result = CourseToolkit.isPalindrome("abba");
+
+        assertTrue(result);
+    }
+    @Test 
+    void returnsFalseForNotPalindrome() {
+        boolean result = CourseToolkit.isPalindrome("abc");
+
+        assertFalse(result);
+    }
+    @Disabled
+    void returnsForNull() {
+        boolean result = CourseToolkit.isPalindrome("null");
+
+        assertFalse(result);
     }
 }

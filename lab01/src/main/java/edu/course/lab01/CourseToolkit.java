@@ -32,4 +32,20 @@ public final class CourseToolkit {
         }
         return true;
     }
+    public static boolean isPalindrome(String text) {
+        if (text == null) {
+            throw new IllegalArgumentException("Строка не может быть null");
+        }
+        String text_input=text;
+        String text_reverse="";
+        for(int i = text.length()-1; i >= 0; i--) {
+            text_reverse += text.charAt(i);
+        }
+        if (text_input.equals(text_reverse)) {
+            return true;
+        } else {
+            return false;
+        }
+    
+    }
 }

@@ -2,6 +2,7 @@ package edu.course.lab01;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -75,5 +76,29 @@ class CourseToolkitTest {
         boolean result = CourseToolkit.isPalindrome("null");
 
         assertFalse(result);
+    }
+    @Disabled 
+    void returnsAverageForNone() {
+        double result = CourseToolkit.Average(new int[] {});
+
+        assertEquals(result,  2);
+    }
+    @Disabled 
+    void returnsAverageForNull() {
+        double result = CourseToolkit.Average(null);
+
+        assertEquals(result,  0);
+    }
+    @Test 
+    void returnsAverageForMassive() {
+        double result = CourseToolkit.Average(new int[] {1, 2, 3});
+
+        assertEquals(result,  2);
+    }
+    @Test 
+    void returnsAverageForLengthOne() {
+        double result = CourseToolkit.Average(new int[] {1});
+
+        assertEquals(result, 1);
     }
 }

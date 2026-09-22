@@ -1,6 +1,8 @@
 package edu.course.lab01;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -29,7 +31,19 @@ class CourseToolkitTest {
 
         assertTrue(result);
     }
-    @Test 
+    @ParameterizedTest 
+    @CsvSource ({
+        "1, false",
+        "2, true",
+        "44, false",
+        "11, true",
+        "49, false"
+    
+    })
+    void returnsTestPrimeForNumber(int number, boolean expected) {
+        assertEquals(expected, CourseToolkit.isPrime(number));
+    }
+   /* @Test 
     void returnsFalseNumbersLessThanTwo() {
         boolean result = CourseToolkit.isPrime(1);
 
@@ -46,13 +60,13 @@ class CourseToolkitTest {
         boolean result = CourseToolkit.isPrime(44);
 
         assertFalse(result);
-    }
+    } 
     @Test 
     void returnsTrueForPrimeNumbers() {
         boolean result = CourseToolkit.isPrime(11);
 
         assertTrue(result);
-    }
+    } */
     @Test 
     void returnsTrueForLengthOne() {
         boolean result = CourseToolkit.isPalindrome("a");

@@ -85,6 +85,12 @@ class CourseToolkitTest {
 
         assertFalse(result);
     }
+    @Test 
+    void returnsFalseForDifferentreg() {
+        boolean result = CourseToolkit.isPalindrome("abA");
+
+        assertFalse(result);
+    }
     @Disabled
     void returnsForNull() {
         boolean result = CourseToolkit.isPalindrome("null");

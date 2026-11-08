@@ -4,7 +4,8 @@ import java.util.Map;
 
 public class TaskRegistry {
     private final Map<ProjectTask, String> tasks = new HashMap<>();
-    public void addTask (ProjectTask task, String description) {
+    
+    public void addOrReplace(ProjectTask task, String description) {
         if (task == null || description == null) {
             throw new IllegalArgumentException("Задача и описание не могут быть пустыми");
         }
@@ -20,6 +21,11 @@ public class TaskRegistry {
         if (task == null) return false;
         return tasks.containsKey(task);
     }
+    public boolean removeTask(ProjectTask task) {
+        if (task == null) return false;
+        return tasks.remove(task) != null;
+    }
+
     public int size() {
         return tasks.size();
     }
